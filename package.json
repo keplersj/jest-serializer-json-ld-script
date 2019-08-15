@@ -1,0 +1,41 @@
+{
+  "name": "jest-serializer-json-ld-script",
+  "version": "0.0.0-dev",
+  "description": "Serializer to correctly display JSON-LD objects in Jest snapshots",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keplersj/jest-serializer-json-ld-script.git"
+  },
+  "keywords": [
+    "jest",
+    "react",
+    "react-helmet",
+    "json",
+    "jsonld",
+    "metadata",
+    "seo",
+    "unit-testing",
+    "snapshot-testing"
+  ],
+  "author": "Kepler Sticka-Jones <kepler@stickajones.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keplersj/jest-serializer-json-ld-script/issues"
+  },
+  "homepage": "https://github.com/keplersj/jest-serializer-json-ld-script#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.17",
+    "@types/node": "^12.7.1",
+    "@types/react": "^16.8.25",
+    "react": "^16.8.6",
+    "typescript": "^3.5.3"
+  },
+  "peerDependencies": {
+    "react": "*"
+  }
+}
