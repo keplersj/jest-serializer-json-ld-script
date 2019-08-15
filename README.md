@@ -1,7 +1,7 @@
 # jest-serializer-json-ld-script
 
-[![Build Status](https://travis-ci.org/keplersj/jest-serializer-json-ld-script.svg?branch=master)](https://travis-ci.org/keplersj/jest-preset-gatsby)
-[![npm version](https://badge.fury.io/js/jest-serializer-json-ld-script.svg)](https://badge.fury.io/js/jest-preset-gatsby)
+[![Build Status](https://travis-ci.org/keplersj/jest-serializer-json-ld-script.svg?branch=master)](https://travis-ci.org/keplersj/jest-serializer-json-ld-script)
+[![npm version](https://badge.fury.io/js/jest-serializer-json-ld-script.svg)](https://badge.fury.io/js/jest-serializer-json-ld-script)
 
 Jest Snapshot serializer to better visualize React `<script>` elements containing LD+JSON data.
 

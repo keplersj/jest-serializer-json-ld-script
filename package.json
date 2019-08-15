@@ -1,15 +1,18 @@
 {
   "name": "jest-serializer-json-ld-script",
-  "version": "0.0.0-dev",
+  "version": "0.0.0-development",
   "description": "Serializer to correctly display JSON-LD objects in Jest snapshots",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "prerelease": "tsc",
+    "release": "semantic-release",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/keplersj/jest-serializer-json-ld-script.git"
+    "url": "https://github.com/keplersj/jest-serializer-json-ld-script.git"
   },
   "keywords": [
     "jest",
@@ -28,12 +31,36 @@
     "url": "https://github.com/keplersj/jest-serializer-json-ld-script/issues"
   },
   "homepage": "https://github.com/keplersj/jest-serializer-json-ld-script#readme",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "@types/jest": "^24.0.17",
     "@types/node": "^12.7.1",
     "@types/react": "^16.8.25",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "husky": "^3.0.3",
+    "jest": "^24.8.0",
+    "jest-runner-eslint": "^0.7.4",
+    "jest-runner-prettier": "^0.2.7",
+    "prettier": "^1.18.2",
     "react": "^16.8.6",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "semantic-release": "^15.13.21"
   },
   "peerDependencies": {
     "react": "*"
