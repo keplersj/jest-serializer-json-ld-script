@@ -2,18 +2,9 @@
 
 import * as React from "react";
 
-function isReactElement(val: any): boolean {
-  return Boolean(val.$$typeof && val.$$typeof === Symbol.for("react.element"));
-}
-
-function isScriptElement(val: any): boolean {
-  return Boolean(val.type && val.type === "script");
-}
-
 function hasValidProps(val: any): boolean {
   return Boolean(
-    val.props &&
-      val.props.dangerouslySetInnerHTML &&
+    val.props.dangerouslySetInnerHTML &&
       val.props.type &&
       val.props.type === "application/ld+json"
   );
@@ -22,7 +13,10 @@ function hasValidProps(val: any): boolean {
 const JSONLDSerializer: jest.SnapshotSerializerPlugin = {
   test(val) {
     return Boolean(
-      val && isReactElement(val) && isScriptElement(val) && hasValidProps(val)
+      val &&
+        React.isValidElement(val) &&
+        val.type === "script" &&
+        hasValidProps(val)
     );
   },
 
