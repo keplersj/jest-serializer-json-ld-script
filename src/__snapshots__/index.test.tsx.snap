@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Serialization function serializes a JSON+LD script element with data set dangerously correctly 1`] = `
+<script
+  type="application/ld+json"
+>
+  Object {}
+</script>
+`;

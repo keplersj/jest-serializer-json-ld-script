@@ -24,3 +24,4 @@ const JSONLDSerializer: jest.SnapshotSerializerPlugin = {
 };
 
 module.exports = JSONLDSerializer;
+export default JSONLDSerializer;
