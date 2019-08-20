@@ -1,14 +1,28 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import * as React from "react";
+
+function isReactElement(val: any): boolean {
+  return Boolean(val.$$typeof && val.$$typeof === Symbol.for("react.element"));
+}
+
+function isScriptElement(val: any): boolean {
+  return Boolean(val.type && val.type === "script");
+}
+
+function hasValidProps(val: any): boolean {
+  return Boolean(
+    val.props &&
+      val.props.dangerouslySetInnerHTML &&
+      val.props.type &&
+      val.props.type === "application/ld+json"
+  );
+}
 
 const JSONLDSerializer: jest.SnapshotSerializerPlugin = {
   test(val) {
     return Boolean(
-      val &&
-        val.$$typeof === Symbol.for("react.element") &&
-        val.type === "script" &&
-        val.props.dangerouslySetInnerHTML &&
-        val.props.type &&
-        val.props.type === "application/ld+json"
+      val && isReactElement(val) && isScriptElement(val) && hasValidProps(val)
     );
   },
 
