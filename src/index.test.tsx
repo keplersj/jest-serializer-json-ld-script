@@ -34,6 +34,17 @@ describe("Serializer test function", () => {
     expect(shouldSerialize).toEqual(false);
   });
 
+  it("return false when given a React component", () => {
+    const Component = (): React.ReactElement => (
+      <div>
+        <span>Test Component</span>
+      </div>
+    );
+    const shouldSerialize = serializer.test(<Component />);
+
+    expect(shouldSerialize).toEqual(false);
+  });
+
   it("returns false if value is undefined", () => {
     const shouldSerialize = serializer.test(undefined);
 
