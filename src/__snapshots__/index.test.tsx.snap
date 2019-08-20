@@ -7,3 +7,10 @@ exports[`Serialization function serializes a JSON+LD script element with data se
   Object {}
 </script>
 `;
+
+exports[`Serialization module matches expectations 1`] = `
+Object {
+  "print": [Function],
+  "test": [Function],
+}
+`;

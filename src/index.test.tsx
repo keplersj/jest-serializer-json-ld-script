@@ -49,3 +49,9 @@ describe("Serialization function", () => {
     expect(ldScriptElement).toMatchSnapshot();
   });
 });
+
+describe("Serialization module", () => {
+  it("matches expectations", () => {
+    expect(serializer).toMatchSnapshot();
+  });
+});
