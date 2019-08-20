@@ -33,6 +33,12 @@ describe("Serializer test function", () => {
 
     expect(shouldSerialize).toEqual(false);
   });
+
+  it("returns false if value is undefined", () => {
+    const shouldSerialize = serializer.test(undefined);
+
+    expect(shouldSerialize).toEqual(false);
+  });
 });
 
 describe("Serialization function", () => {

@@ -2,13 +2,13 @@ import * as React from "react";
 
 const JSONLDSerializer: jest.SnapshotSerializerPlugin = {
   test(val) {
-    return (
+    return Boolean(
       val &&
-      val.$$typeof === Symbol.for("react.element") &&
-      val.type === "script" &&
-      val.props.dangerouslySetInnerHTML &&
-      val.props.type &&
-      val.props.type === "application/ld+json"
+        val.$$typeof === Symbol.for("react.element") &&
+        val.type === "script" &&
+        val.props.dangerouslySetInnerHTML &&
+        val.props.type &&
+        val.props.type === "application/ld+json"
     );
   },
 
