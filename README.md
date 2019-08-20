@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/keplersj/jest-serializer-json-ld-script.svg?branch=master)](https://travis-ci.org/keplersj/jest-serializer-json-ld-script)
 [![npm version](https://badge.fury.io/js/jest-serializer-json-ld-script.svg)](https://badge.fury.io/js/jest-serializer-json-ld-script)
+[![Code Coverage](https://codecov.io/gh/keplersj/jest-serializer-json-ld-script/branch/master/graph/badge.svg)](https://codecov.io/gh/keplersj/jest-serializer-json-ld-script)
 
 Jest Snapshot serializer to better visualize React `<script>` elements containing LD+JSON data.
 
