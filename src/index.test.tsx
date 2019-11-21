@@ -1,4 +1,5 @@
 import * as React from "react";
+import renderer from "react-test-renderer";
 import serializer from ".";
 
 describe("Serializer test function", () => {
@@ -64,6 +65,87 @@ describe("Serialization function", () => {
     );
 
     expect(ldScriptElement).toMatchSnapshot();
+  });
+
+  it("serializes a script element with data correctly", () => {
+    expect.addSnapshotSerializer(serializer);
+
+    const element = (
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "Thing",
+            "@id": "https://example.dev/example_thing"
+          })
+        }}
+      />
+    );
+
+    expect(element).toMatchSnapshot();
+  });
+
+  it("serializes a wrapped script element with data correctly", () => {
+    expect.addSnapshotSerializer(serializer);
+
+    const element = (
+      <div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "http://schema.org",
+              "@type": "Thing",
+              "@id": "https://example.dev/example_thing"
+            })
+          }}
+        />
+      </div>
+    );
+
+    expect(element).toMatchSnapshot();
+  });
+
+  it("serializes a script element created using React.createElement", () => {
+    expect.addSnapshotSerializer(serializer);
+
+    const element = React.createElement("script", {
+      type: "application/ld+json",
+      dangerouslySetInnerHTML: {
+        __html: JSON.stringify({
+          "@context": "http://schema.org",
+          "@type": "Thing",
+          "@id": "https://example.dev/example_thing"
+        })
+      }
+    });
+
+    expect(element).toMatchSnapshot();
+  });
+
+  it("serializes a script element wrapped in a component", () => {
+    expect.addSnapshotSerializer(serializer);
+
+    const Component = () => (
+      <div>
+        <div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "http://schema.org",
+                "@type": "Thing",
+                "@id": "https://example.dev/example_thing"
+              })
+            }}
+          />
+        </div>
+      </div>
+    );
+
+    const tree = renderer.create(<Component />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
 

@@ -8,6 +8,60 @@ exports[`Serialization function serializes a JSON+LD script element with data se
 </script>
 `;
 
+exports[`Serialization function serializes a script element created using React.createElement 1`] = `
+<script
+  type="application/ld+json"
+>
+  Object {
+  "@context": "http://schema.org",
+  "@id": "https://example.dev/example_thing",
+  "@type": "Thing",
+}
+</script>
+`;
+
+exports[`Serialization function serializes a script element with data correctly 1`] = `
+<script
+  type="application/ld+json"
+>
+  Object {
+  "@context": "http://schema.org",
+  "@id": "https://example.dev/example_thing",
+  "@type": "Thing",
+}
+</script>
+`;
+
+exports[`Serialization function serializes a script element wrapped in a component 1`] = `
+<div>
+  <div>
+    <script
+      type="application/ld+json"
+    >
+      Object {
+      "@context": "http://schema.org",
+      "@id": "https://example.dev/example_thing",
+      "@type": "Thing",
+    }
+    </script>
+  </div>
+</div>
+`;
+
+exports[`Serialization function serializes a wrapped script element with data correctly 1`] = `
+<div>
+  <script
+    type="application/ld+json"
+  >
+    Object {
+    "@context": "http://schema.org",
+    "@id": "https://example.dev/example_thing",
+    "@type": "Thing",
+  }
+  </script>
+</div>
+`;
+
 exports[`Serialization module matches expectations 1`] = `
 Object {
   "print": [Function],
