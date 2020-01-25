@@ -52,12 +52,8 @@
     "@types/node": "^13.1.0",
     "@types/react": "^16.8.25",
     "@types/react-test-renderer": "^16.9.1",
-    "@typescript-eslint/eslint-plugin": "^2.0.0",
-    "@typescript-eslint/parser": "^2.0.0",
     "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
+    "eslint-config-starstuff": "^1.2.3",
     "husky": "^4.0.0",
     "jest": "^24.8.0",
     "jest-runner-eslint": "^0.7.4",
@@ -71,5 +67,11 @@
   },
   "peerDependencies": {
     "react": "*"
+  },
+  "eslintConfig": {
+    "extends": "starstuff/auto",
+    "env": {
+      "node": true
+    }
   }
 }
