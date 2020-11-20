@@ -50,7 +50,7 @@
     "@stryker-mutator/typescript": "^4.0.0",
     "@types/jest": "^26.0.0",
     "@types/node": "^14.0.0",
-    "@types/react": "^16.8.25",
+    "@types/react": "^17.0.0",
     "@types/react-test-renderer": "^16.9.1",
     "eslint": "^6.1.0",
     "eslint-config-starstuff": "^1.2.3",
